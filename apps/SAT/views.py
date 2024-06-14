@@ -23,7 +23,7 @@ class SAT(TemplateView):
         return context
     
     def mandar_datos_CAE(self,url,resultado):
-        respuesta = requests.post(url,json=resultado)
+        respuesta = requests.post(url, json=resultado, proxies={"http": None, "https": None})
         if respuesta.status_code == 200:
             messages.success(self.request,'El registro se realizó con éxito.')
         else :
