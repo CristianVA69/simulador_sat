@@ -24,15 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '0y$zjld6*_rsjgtm8$w&(gcmaj=h9dcy^_v7wgc(%k1b@h3e&9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG") == 'True'
+DEBUG ='False'
 
 ALLOWED_HOSTS = ['*']
 
 LANGUAGE_CODE = 'es'
-
-USE_L10N = True
-
-DATE_FORMAT = 'j F Y'
 
 # Application definition
 
