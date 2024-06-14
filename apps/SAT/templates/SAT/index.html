@@ -239,7 +239,7 @@ Simulador SAT
             </div>
             <div class="modal-body">
                 <p class="fs-3 text-center">
-                    ¿La siguiente constancia con el numero de control <span class="fw-bold" style="color: #10312b;">{numero control}</span> a fectuado el pago correspondiente?
+                    ¿La siguiente constancia con el numero de control <span class="fw-bold" style="color: #10312b;" id="span_n">{numero control}</span> a fectuado el pago correspondiente?
                 </p>
                 <div class="d-flex justify-content-center">
                     <form action="" method="post">
@@ -274,6 +274,7 @@ Simulador SAT
         // Actualizar el contenido del modal
         var modal = $(this);
         modal.find('.modal-body #numero_c').val(valorPasado);
+        modal.find('.modal-body #span_n').text(valorPasado);
         });
     });
 </script>

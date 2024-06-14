@@ -23,7 +23,7 @@ class SAT(TemplateView):
         return context
     
     def mandar_datos_CAE(self,url,resultado):
-        respuesta = requests.post(url,resultado)
+        respuesta = requests.post(url,json=resultado)
         if respuesta.status_code == 200:
             messages.success(self.request,'El registro se realizó con éxito.')
         else :
@@ -38,11 +38,11 @@ class SAT(TemplateView):
                 instancia = constancia.objects.get(numero_constancia = numero_constancia)
                 instancia.pago = True
                 instancia.save()
-                self.mandar_datos_CAE('/',True)
+                self.mandar_datos_CAE('https://cuentaaduanera.qaenv.dev/constancias/respuesta_SAT/',{"numero": numero_constancia,"pago": True})
             else:
                 #se manda False a CAE
                 print('no se pago jiji :D')
-                self.mandar_datos_CAE('/',False)
+                self.mandar_datos_CAE('https://cuentaaduanera.qaenv.dev/constancias/respuesta_SAT/',{"numero": numero_constancia,"pago": False})
         return redirect('SAT:index')
 
 #Integracion con CAE
