@@ -1,0 +1,4 @@
+.my-custom-confirm-button {
+    float: right; /* Hace que el botón se alinee a la derecha */
+    margin-left: 575px; /* Añade un espacio entre el botón y el contenido */
+}

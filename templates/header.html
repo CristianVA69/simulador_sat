@@ -1,0 +1,216 @@
+{% load static %}
+
+{% block css %} 
+    <link rel="stylesheet" type="text/css" href="{% static '/css/header.css' %}">
+    <style>
+        .text-anam-info {
+            display: block;
+        }
+    </style>
+{% endblock %}
+
+{% load static %}
+
+<div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: true, lg: true}" data-kt-sticky-name="app-header-minimize" data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="false">
+    <!--begin::Header container-->
+    <div class="app-container container-fluid d-flex align-items-stretch justify-content-between" id="kt_app_header_container">
+        <!--begin::Sidebar mobile toggle-->
+        <div class="d-flex align-items-center d-lg-none ms-n3 me-1 me-md-2" title="Show sidebar menu">
+            <div class="btn btn-icon btn-active-color-primary w-35px h-35px" id="kt_app_sidebar_mobile_toggle"><span class="ki-duotone ki-abstract-14 fs-2 fs-md-1"><span class="path1"></span><span class="path2"></span></span></div>
+        </div>
+        <!--end::Sidebar mobile toggle-->
+        <!--begin::Mobile logo-->
+        <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+            <a href="/" class="d-lg-none">
+                <img alt="Logo" src="{% static 'src/logo.png'%}" class="h-30px" />
+            </a>
+        </div>
+        <!--end::Mobile logo-->
+        <!--begin::Header wrapper-->
+        <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
+            <!--begin::Menu wrapper-->
+            <div class="app-header-menu app-header-mobile-drawer align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="app-header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_app_header_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="{default: 'append', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}">
+                <!--begin::Menu-->
+                <div class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0" id="kt_app_header_menu" data-kt-menu="true">
+                        <a
+                        href="#"
+                        class="my-6 mb-lg-0 link-body-emphasis text-decoration-none fs-3"
+                        aria-expanded="false"
+                        >
+                        Simulador del SAT
+                    </a>
+                </div>
+            </div>
+            <!--end::Menu-->
+        </div>
+        <!--end::Menu wrapper-->
+        
+        <!--begin::Navbar-->
+        <div class="app-navbar flex-shrink-0">
+            
+            <!--begin::User menu-->
+            <div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
+                <!--begin::Menu wrapper-->
+                <div class="d-flex flex-column align-self-center me-4">
+                    <p class="fw-bold">
+                        <span style="color: #b5b5c3"> Número de empleado </span> <br />
+                        <span class="text-center text-anam-primary fs-5">45612318476</span>
+                    </p>
+                </div>
+                <div class="d-flex flex-column align-self-center me-4">
+                    <p class="fw-bold text-end">
+                        <span style="color: #b5b5c3"> Administrador </span> <br />
+                        administrador@gmail.com
+                    </p>
+                </div>
+                <div class="cursor-pointer symbol symbol-35px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                    <img src="{% static 'src/icon-user.jpg' %}" class="rounded-circle" alt="user" />
+                </div>
+                <!--begin::User account menu-->
+                <div class="menu menu-sub menu-sub-dropdown menu-column menu-gray-800 menu-state-bg menu-state-color fw-semibold py-3 fs-6 w-275px" data-kt-menu="true">
+                    <!--begin::Menu item-->
+                    <div class="menu-item px-3">
+                        <!--end::Menu item-->
+                        <!--end::Menu separator-->
+                        <!--begin::Menu item-->
+                        <div class="menu-item menu-link px-2 py-3" style="border-bottom: solid; border-color: #ddc9a3; border-width: 2px;" >
+                            <a href="#" class="text-gray-800 px-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.5 10.5C13.3995 10.5 15.75 8.1495 15.75 5.25C15.75 2.35051 13.3995 0 10.5 0C7.60051 0 5.25 2.35051 5.25 5.25C5.25 8.1495 7.60051 10.5 10.5 10.5ZM14 5.25C14 7.183 12.433 8.75 10.5 8.75C8.567 8.75 7 7.183 7 5.25C7 3.317 8.567 1.75 10.5 1.75C12.433 1.75 14 3.317 14 5.25Z" fill="#DDC9A3"/>
+                                    <path d="M21 19.25C21 21 19.25 21 19.25 21H1.75C1.75 21 0 21 0 19.25C0 17.5 1.75 12.25 10.5 12.25C19.25 12.25 21 17.5 21 19.25ZM19.25 19.2439C19.2475 18.812 18.9809 17.5183 17.7938 16.3312C16.6523 15.1897 14.5059 14 10.5 14C6.49404 14 4.34762 15.1897 3.20617 16.3312C2.01907 17.5183 1.75249 18.812 1.75 19.2439H19.25Z" fill="#DDC9A3"/>
+                                    </svg>
+                                    <span style="padding-left: 10px;">Perfil</span></a>
+                        </div>
+                        <!--end::Menu item-->
+                        <!--begin::Menu item-->
+                        <div class="menu-item menu-link px-2 py-3" style="border-bottom: solid; border-color: #ddc9a3; border-width: 2px;" onclick="cambiarPassword('Cambiar contraseña', 'Para poder hacer el cambio de contraseña introduzca su contraseña actual como método de seguridad.')">
+                            <a href="#" class="text-gray-800 px-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.3458 2.54538C20.6021 2.80167 20.6021 3.21718 20.3458 3.47346L18.9771 4.84224L16.3521 2.21724L17.7208 0.848461C17.9771 0.592179 18.3926 0.59218 18.6489 0.848461L20.3458 2.54538Z" fill="#DDC9A3"/>
+                                    <path d="M18.049 5.77032L15.424 3.14532L6.48193 12.0874C6.40989 12.1594 6.35561 12.2472 6.32339 12.3439L5.26741 15.5118C5.1819 15.7684 5.42594 16.0124 5.68245 15.9269L8.85041 14.8709C8.94706 14.8387 9.03489 14.7844 9.10693 14.7124L18.049 5.77032Z" fill="#DDC9A3"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.3125 17.7188C1.3125 18.8061 2.19394 19.6875 3.28125 19.6875H17.7188C18.8061 19.6875 19.6875 18.8061 19.6875 17.7188V9.84375C19.6875 9.48131 19.3937 9.1875 19.0312 9.1875C18.6688 9.1875 18.375 9.48131 18.375 9.84375V17.7188C18.375 18.0812 18.0812 18.375 17.7188 18.375H3.28125C2.91881 18.375 2.625 18.0812 2.625 17.7188V3.28125C2.625 2.91881 2.91881 2.625 3.28125 2.625H11.8125C12.1749 2.625 12.4688 2.33119 12.4688 1.96875C12.4688 1.60631 12.1749 1.3125 11.8125 1.3125H3.28125C2.19394 1.3125 1.3125 2.19394 1.3125 3.28125V17.7188Z" fill="#DDC9A3"/>
+                                </svg>
+                                    
+                                <span class="menu-text"><span style="padding-left: 10px;">Actualizar contraseña</span></span>
+                            </a>
+                        </div>
+                        <!--end::Menu item-->
+                        <!--begin::Menu item-->
+                        <div class="menu-item menu-link px-2 py-3" style="border-bottom: solid; border-color: #ddc9a3; border-width: 2px;">
+                            <a href="#" class="text-gray-800 px-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.4534 1.3125C7.99706 1.3125 8.43778 1.75322 8.43778 2.29688V10.5C8.43778 10.8624 8.73159 11.1562 9.09403 11.1562C9.45647 11.1562 9.75028 10.8624 9.75028 10.5V7.1751C9.7872 7.17335 9.82506 7.1717 9.86363 7.1702C10.2789 7.15406 10.6992 7.15903 10.9341 7.20601C11.1104 7.24126 11.3197 7.33155 11.5228 7.44442C11.6229 7.50008 11.719 7.63769 11.719 7.85647V10.5C11.719 10.8624 12.0128 11.1562 12.3753 11.1562C12.7377 11.1562 13.0315 10.8624 13.0315 10.5V8.4455C13.0764 8.44103 13.1228 8.43686 13.1702 8.43317C13.585 8.40093 13.9367 8.41886 14.1003 8.48431C14.2551 8.54622 14.4929 8.75687 14.7375 9.04877C14.8441 9.17606 14.935 9.29786 15.0003 9.38968V11.1562C15.0003 11.5187 15.2941 11.8125 15.6565 11.8125C16.019 11.8125 16.3128 11.5187 16.3128 11.1562V9.84375H16.7623C17.5388 9.84375 18.1456 10.5142 18.0683 11.2868L17.7119 14.8507C17.6661 15.3089 17.5244 15.7523 17.2959 16.1521L15.4646 19.3568C15.3478 19.5613 15.1304 19.6875 14.8949 19.6875H6.51521C6.29579 19.6875 6.09089 19.5778 5.96917 19.3953L4.08809 16.5737C3.9135 16.3118 3.80424 16.0118 3.76948 15.699L3.31665 11.6235C3.27906 11.2852 3.50639 10.9743 3.84018 10.9075L5.15653 10.6442V11.8125C5.15653 12.1749 5.45034 12.4688 5.81278 12.4688C6.17522 12.4688 6.46903 12.1749 6.46903 11.8125V2.29687C6.46903 1.75322 6.90975 1.3125 7.4534 1.3125ZM9.75028 5.86125V2.29688C9.75028 1.02835 8.72193 0 7.4534 0C6.18487 0 5.15653 1.02835 5.15653 2.29687V9.30575L3.58278 9.6205C2.58141 9.82078 1.8994 10.7535 2.01218 11.7684L2.46501 15.8439C2.52294 16.3653 2.70504 16.8652 2.99603 17.3017L4.87711 20.1233C5.24224 20.671 5.85695 21 6.51521 21H14.8949C15.6014 21 16.2537 20.6214 16.6042 20.008L18.4355 16.8033C18.7553 16.2436 18.9538 15.6228 19.0179 14.9813L19.3743 11.4174C19.5288 9.87215 18.3153 8.53125 16.7623 8.53125H15.9991C15.9284 8.43546 15.8419 8.32328 15.7436 8.20594C15.4921 7.90566 15.0737 7.46006 14.5878 7.26569C14.1107 7.07486 13.478 7.09279 13.0685 7.12462C13.0087 7.12927 12.9505 7.13453 12.8945 7.14016C12.7588 6.80206 12.5189 6.49654 12.1605 6.29728C11.9048 6.1551 11.5591 5.99251 11.1915 5.91899C10.7857 5.83783 10.2216 5.8428 9.81265 5.85869C9.79164 5.85951 9.77084 5.86036 9.75028 5.86125ZM12.4992 8.51945C12.4991 8.51947 12.4991 8.51946 12.4992 8.51945V8.51945Z" fill="#DDC9A3"/>
+                                </svg>
+                                <span style="padding-left: 10px;">Altas y bajas de empleados</span></a>
+                        </div>
+
+                        <div class="menu-item menu-link px-2 py-3" style="border-bottom: solid; border-color: #ddc9a3; border-width: 2px;" onclick="redirectToHelpView()">
+                            <a href="#" class="text-gray-800 px-2">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.5 19.6875C5.42588 19.6875 1.3125 15.5741 1.3125 10.5C1.3125 5.42588 5.42588 1.3125 10.5 1.3125C15.5741 1.3125 19.6875 5.42588 19.6875 10.5C19.6875 15.5741 15.5741 19.6875 10.5 19.6875ZM10.5 21C16.299 21 21 16.299 21 10.5C21 4.70101 16.299 0 10.5 0C4.70101 0 0 4.70101 0 10.5C0 16.299 4.70101 21 10.5 21Z" fill="#DDC9A3"/>
+                                    <path d="M6.89733 7.59432C6.88737 7.77311 7.03487 7.91794 7.21394 7.91794H8.29608C8.4773 7.91794 8.62139 7.77017 8.64574 7.59059C8.76249 6.72942 9.35353 6.10172 10.4071 6.10172C11.3069 6.10172 12.1317 6.55161 12.1317 7.63467C12.1317 8.4678 11.6401 8.85104 10.8653 9.43423C9.9822 10.0757 9.28238 10.8256 9.33236 12.0419L9.33626 12.3265C9.33872 12.5059 9.48489 12.6501 9.66436 12.6501H10.7288C10.91 12.6501 11.0569 12.5032 11.0569 12.322V12.1836C11.0569 11.2421 11.4152 10.9672 12.3816 10.234C13.1814 9.62585 14.0146 8.95102 14.0146 7.5347C14.0146 5.55185 12.34 4.59375 10.5071 4.59375C8.84404 4.59375 7.0214 5.36893 6.89733 7.59432ZM8.94079 15.1578C8.94079 15.8577 9.49899 16.3742 10.2655 16.3742C11.0653 16.3742 11.6151 15.8577 11.6151 15.1578C11.6151 14.433 11.0653 13.9248 10.2655 13.9248C9.49899 13.9248 8.94079 14.433 8.94079 15.1578Z" fill="#DDC9A3"/>
+                                </svg>
+                                    
+                                <span style="padding-left: 10px;">Ayuda al usuario</span></a>
+                        </div>
+                        <!--end::Menu item-->
+                        <!--begin::Menu item url 'user:logout'-->
+                        <form method="post"  class="logout-form">
+                            {% csrf_token %}
+                            <div class="menu-item menu-link px-2">
+                                <a href="#" class="text-gray-800 px-2" onclick="document.querySelector('.logout-form').submit()">
+                                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.875 10.5C7.875 10.8624 8.16881 11.1563 8.53125 11.1563H16.1344L13.3172 13.9735C13.0609 14.2297 13.0609 14.6453 13.3172 14.9015C13.5735 15.1578 13.989 15.1578 14.2453 14.9015L18.1828 10.964C18.4391 10.7078 18.4391 10.2922 18.1828 10.036L14.2453 6.09846C13.989 5.84218 13.5735 5.84218 13.3172 6.09846C13.0609 6.35474 13.0609 6.77026 13.3172 7.02654L16.1344 9.84375H8.53125C8.16881 9.84375 7.875 10.1376 7.875 10.5Z" fill="#DDC9A3"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.59375 19.6875C4.23131 19.6875 3.9375 19.3937 3.9375 19.0312L3.9375 1.96875C3.9375 1.60631 4.23131 1.3125 4.59375 1.3125C4.95619 1.3125 5.25 1.60631 5.25 1.96875V19.0312C5.25 19.3937 4.95619 19.6875 4.59375 19.6875Z" fill="#DDC9A3"/>
+                                        </svg>
+                                    <span style="padding-left: 10px;">Cerrar sesión</span>
+                                </a>
+                            </div>
+                        </form>
+                        <!--end::Menu item-->
+                    </div>
+                    <!--end::User account menu-->
+                    
+                    <!--end::Menu wrapper-->
+                </div>
+                <!--end::User menu-->
+                <!--begin::Header menu toggle-->
+                <div class="app-navbar-item d-lg-none ms-2 me-n2" title="Show header menu">
+                    <div class="btn btn-flex btn-icon btn-active-color-primary w-30px h-30px" id="kt_app_header_menu_toggle"><span class="ki-duotone ki-element-4 fs-1"><span class="path1"></span><span class="path2"></span></span></div>
+                </div>
+                <!--end::Header menu toggle-->
+                <!--begin::Aside toggle-->
+                <!--end::Header menu toggle-->
+            </div>
+            <!--end::Navbar-->
+        </div>
+        <!--end::Header wrapper-->
+    </div>
+    <!--end::Header container-->
+</div>
+
+<script>
+    
+    function cambiarPassword(title, message) {
+        let content = `
+            <div class="text-start w-100">
+                <span style="font-weight: bold; font-size: 20px;">${title}</span> 
+                <br><br><br> 
+                ${message}
+                <br><br>
+                <div id="confirmPassword">
+                    <label for="confirmPasswordInput" class="form-label">Contraseña actual:</label>
+                    <input type="password" class="form-control" id="confirmPasswordInput" placeholder="***********">
+                </div>
+            </div>
+        `;
+    
+        Swal.fire({
+            html: content,
+            allowOutsideClick: true,
+            showCancelButton: true,
+            confirmButtonText: 'Confirmar',
+            confirmButtonColor: '#16634d',
+            cancelButtonColor: '#9f2241',
+            width: '800px'
+        }).then(function(result) {
+            if (result.isConfirmed) {
+                const valorInput = document.getElementById('confirmPasswordInput').value;
+                nuevaPassword();
+            }
+        });
+    }
+
+    function nuevaPassword() {
+        let content = `
+            <div class="text-start w-100">
+                <span style="font-weight: bold; font-size: 20px;">Cambiar contraseña</span> 
+                <br><br><br>
+                <div>
+                <div style="display: flex;">
+                    <div id="newPassword" style="flex: 1; margin-right: 10px;">
+                        <label for="newPasswordInput" class="form-label">Nueva contraseña:</label>
+                        <input type="password" class="form-control" id="newPasswordInput" placeholder="***********">
+                    </div>
+                    <div id="confirmPassword" style="flex: 1;">
+                        <label for="confirmPasswordInput" class="form-label">Confirmar contraseña:</label>
+                        <input type="password" class="form-control" id="confirmPasswordInput" placeholder="***********">
+                    </div>
+                </div>
+            </div>
+        `;
+    
+        Swal.fire({
+            html: content,
+            allowOutsideClick: true,
+            confirmButtonText: 'Guardar Cambios',
+            confirmButtonColor: '#16634d',
+            width: '800px',
+            customClass: {
+                confirmButton: 'my-custom-confirm-button'
+            },
+        }).then(function(result) {
+            console.log("Cambios guardados")
+        });
+    }
+</script>

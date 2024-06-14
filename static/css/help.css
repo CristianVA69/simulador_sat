@@ -1,0 +1,82 @@
+.btn_width {
+    width: 100% !important;
+}
+
+.txt_guinda {
+    color: #691C32 !important;
+}
+
+.content_card {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.icon_content {
+    padding: 0.6rem;
+}
+
+.icon_circle {
+    border-radius: 50% !important;
+    border: #bc955c solid 1px;
+}
+
+.btn_actions {
+    padding:5px !important; 
+    border-radius: 30px !important; 
+    border: #235b4e 2px solid !important;
+    color: #235b4e !important;
+}
+
+.btn_actions:hover {
+    background-color: #235b4e;
+    color: #ddc9a3 !important;
+}
+
+.btn_actions:focus-within  {
+    background-color: #182F29;
+    color: #ddc9a3 !important;
+}
+
+.btn_guinda {
+    background-color: #9f2241 !important;
+    color: white !important;
+}
+
+.btn_guinda:hover {
+    background-color: #691C32 !important;
+    color: white !important;
+}
+
+.tag_estado_success {
+    border-radius: 100px;
+    border-color: #235b4e !important;
+    background-color: #D9E2DF !important;
+}
+
+.fix_btn_accordion.accordion-button {
+    color:#235b4e !important
+}
+
+.fix_btn_accordion.accordion-button:not(.collapsed) {
+    color: #235b4e !important;
+    background-color: white !important;
+} 
+
+.fix_btn_second_accordion.accordion-button {
+    color:black !important;
+}
+
+.fix_btn_second_accordion.accordion-button:not(.collapsed) {
+    color: black !important;
+}
+
+.btn_file.btn-check:checked + .btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check) + .btn:active {
+    background-color: var(--bs-btn-active-bg);
+    border-color: rgba(0,255,0,0) !important;
+}
+
+.btn_file.form-control:focus {
+    border-color: rgba(255,255,255,0);
+    box-shadow: 0 0 0 .25rem rgba(255,255,255,0);
+}
+  

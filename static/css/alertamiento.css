@@ -1,0 +1,16 @@
+.btn-filtros {
+    --bs-btn-color: #ffffff;
+    --bs-btn-bg: #235b4e;
+    --bs-btn-border-color: #235b4e;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #10312b;
+    --bs-btn-hover-border-color: #10312b;
+    --bs-btn-focus-shadow-rgb: 53, 128, 217;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #182f29;
+    --bs-btn-active-border-color: #182f29;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #ffffff;
+    --bs-btn-disabled-bg: #d9e2df;
+    --bs-btn-disabled-border-color: #d9e2df;
+}

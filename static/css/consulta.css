@@ -1,0 +1,63 @@
+.titulo-container {
+    padding: 10px;
+    border-radius: 15px;
+    color: gray;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.titulo-container2 {
+    padding: 10px;
+    border-radius: 15px;
+    color: gray;
+    display: inline-block;
+    font-size: 35px;
+}
+
+.boton-descarga {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #9f2241;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.boton-descarga:hover {
+    background-color: #ab5575;
+}
+
+.botonesflex {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#custom-file-button {
+    background-color: #16634d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-submit, .btn-cancel {
+    background-color: #9f2241;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.btn-cancel {
+    background-color: #ccc;
+}

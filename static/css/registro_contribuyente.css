@@ -1,0 +1,104 @@
+.botonesflex {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#custom-file-button {
+    background-color: #16634d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+.btn-submit, .btn-cancel {
+    background-color: #9f2241;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.btn-cancel {
+    background-color: #ccc;
+}
+
+.btn-filtros {
+    --bs-btn-color: #ffffff;
+    --bs-btn-bg: #235b4e;
+    --bs-btn-border-color: #235b4e;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #10312b;
+    --bs-btn-hover-border-color: #10312b;
+    --bs-btn-focus-shadow-rgb: 53, 128, 217;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #182f29;
+    --bs-btn-active-border-color: #182f29;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #ffffff;
+    --bs-btn-disabled-bg: #d9e2df;
+    --bs-btn-disabled-border-color: #d9e2df;
+}
+
+/* Custom badges */
+.badge-anam-danger.badge-outline {
+    border: 1px solid #9f2241;
+    color: #9f2241;
+    background-color: #ffeeee;
+    font-weight: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.badge-anam-warning.badge-outline {
+    border: 1px solid #bc955b;
+    color: #bc955b;
+    background-color: #faf6ef;
+    font-weight: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.badge-anam-success.badge-outline {
+    border: 1px solid #235b4e;
+    color: #235b4e;
+    background-color: #e7faf5;
+    font-weight: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.badge-anam-secondary.badge-outline {
+    border: 1px solid #6f7271;
+    color: #6f7271;
+    background-color: #ededee;
+    font-weight: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.badge-anam-primary.badge-outline {
+    border: 1px solid #335a7f;
+    color: #335a7f;
+    background-color: #dce1e9;
+    font-weight: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.motivo-input {
+    width: 100%;
+    min-width: 500px;
+    height: 250px;
+    font-size: 16px;
+}
+
+.swal2-popup.custom-modal-height {
+    height: 80vh;
+}
+
+.swal2-container .swal2-html-container {
+    max-height: none;
+    overflow: auto;
+}

@@ -1,0 +1,22 @@
+.center-input {
+    margin: 0 auto;
+}
+
+.botonesflex {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-submit, .btn-cancel {
+    background-color: #9f2241;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background-color: #ccc;
+}

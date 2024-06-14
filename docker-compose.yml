@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: cae_database
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: ludens123
+    ports:
+      - "5433:5432"

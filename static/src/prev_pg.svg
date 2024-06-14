@@ -1,0 +1,16 @@
+<svg
+  class="icon"
+  width="21"
+  height="20"
+  viewBox="0 0 21 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M9.91211 5L11.0871 6.175L7.27044 10L11.0871 13.825L9.91211 15L4.91211 10L9.91211 5ZM14.9121 5L16.0871 6.175L12.2704 10L16.0871 13.825L14.9121 15L9.91211 10L14.9121 5Z"
+    fill="#5B7282"
+    fill-opacity="0.5"
+  />
+</svg>

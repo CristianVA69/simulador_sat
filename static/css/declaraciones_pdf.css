@@ -1,0 +1,112 @@
+/* Define the size of the page and margins */
+@page {
+    size: A4;
+    margin: 0;
+}
+
+/* Style the body to have no margins */
+body {
+    width: 21cm;
+    height: 29.7cm;
+    padding: 10mm 10mm 10mm 10mm; 
+    font-size: 9px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.logo {
+    width: 90px;
+    height: auto;
+}
+
+.titulo {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.datos-container{
+    margin: 10px;
+
+}
+.column-caja {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    box-sizing: padding-box;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    padding: 5px;
+    box-sizing: padding-box;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.dato {
+    margin-left: 3px;
+    font-weight: bold;
+}
+
+
+.container-datos {
+    border: solid;
+    border-radius: 0.5px;
+    border-color: black;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.cuadro-titulo {
+    width: 100%;
+    background-color: #244062;
+    text-align: center;
+}
+
+.texto-titulo {
+    color: white;
+    font-weight: bold;
+
+}
+
+
+.caja {
+    width:100%;
+    display: block;
+    border: 0.3px solid black;
+}
+
+.texto-caja {
+    padding-left: 2px;
+}
+
+.texto-ayuda {
+    font-size: 6.5px;
+    display: block;
+}
+
+.input-datos {
+    vertical-align: top;
+    display: inline-block;
+    box-sizing: border-box;
+}

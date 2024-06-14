@@ -1,0 +1,42 @@
+/* Estilo para la tabla */
+.tabla-contenedor {
+    width: 100%; /* Ancho fijo del contenedor */
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    --bs-scrollbar-color: #9f2241;
+    border-radius: 20px; /* Redondear todas las esquinas de la tabla */
+    position: relative;
+    max-height: 530px; /* Ajusta esto a la altura deseada */
+    overflow-y: auto;
+}
+/* Estilo para la primera columna de la tabla */
+tr > :first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+
+.table thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #ff0000; /* Color rojo para el encabezado */
+    color: #fff; /* Texto blanco para el encabezado */
+}
+
+/* Estilo para la primera columna de la tabla */
+.table th {
+    background-color: #9f2241;
+    color: #fff;
+}
+
+/* Estilo para el cuerpo de la tabla */
+.table td {
+    background-color: white;
+    color: black; 
+}
+
+/* cambiar el color al cheked */
+.form-check-input:checked {
+    background-color: #235b4e;
+    border-color: #235b4e;  
+}

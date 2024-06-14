@@ -1,0 +1,280 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Simulador SAT
+{% endblock %}
+
+{% block css %}
+<style>
+    .accion-btn {
+        border: 2px solid #235b4e !important;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    
+    /* Estilo al pasar el ratón sobre el botón (hover) */
+    .accion-btn:hover {
+        background-color: #235b4e;
+    
+    }
+    
+    /* Estilo cuando el botón está seleccionado (por graficas, si es un botón de selección) */
+    .accion-btn:active{
+        background-color: #10312b !important;
+    }
+    
+    
+    /* Estilo cuando el botón está desactivado */
+    .accion-btn:disabled {
+        border: 2px solid #dadada !important;
+        background-color: #f3f4f6;
+        opacity: 0.8; /* Puedes ajustar la opacidad según tus preferencias */
+        cursor: not-allowed;
+    }
+    
+    /* Estilo para el icono dentro del botón */
+    .accion-btn i {
+        color: #235b4e; /* Color predeterminado del icono */
+    }
+    
+    .accion-btn:hover .accion-icon {
+        color: #BC955C; /* Color dorado para el icono al hacer hover */
+    }
+    
+    .accion-btn:disabled .accion-icon {
+        color: #dadada; /* Color dorado para el icono al hacer hover */
+    }
+</style>
+{% endblock css %}
+
+{% block content %}
+<div class="container-fluid"> 
+    <div class="mainContent container-fluid m-3 ">
+        <div class="row container-fluid" style="overflow: hidden;">
+            <header class="py-3 mb-4" style="padding-left: 0px;">
+                <div class="d-flex flex-column flex-wrap justify-content-center">
+                    <a class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+                        <span class="fw-bold text-anam-secondary" style="font-size:35px" >Archivos compartidos por CAE</span>
+                    </a>
+                </div>
+                {% comment %} <span class="container-fluid d-flex flex-wrap descripcion">Visualiza que acciones realizaron los usuarios en los ultimos dias.</span> {% endcomment %}
+            </header>
+        </div>
+        <div class="row container-fluid mt-5">
+            <div class="col-6 d-flex justify-content-between">
+                <div class="d-flex flex-column col-3">
+                    <span class="fw-bold text-anam-primary" style="font-size: 40px" id="objetos_encontrados"> {% if page_obj.paginator.count < 10 %}0{{ page_obj.paginator.count }}{% else %}{{ page_obj.paginator.count }}{% endif %} {{contador}}</span>
+                    <span class="tituloTabla">Archivos registrados</span>
+                    <hr style="border: 2px solid #235b4e; opacity: 1" class="text-anam-info">
+                </div>
+            </div>
+
+            <div class="col-6 d-flex align-items-center justify-content-end">
+                <button data-bs-toggle="collapse" aria-expanded="false"
+                class="btn btn-anam-primary m-1 w-auto fontButton" data-bs-target="#filtro" id="toggleButton">Ver filtros</button>
+            </div>
+
+            <div class="collapse" id="filtro">
+                <div class="filter-data-1">
+                    <div class="container-fluid containerFiltro p-5 card">
+                        <div class="d-flex flex-row flex-wrap">
+                            {% comment %} <div class="container-fluid d-flex"> {% endcomment %}
+                                {% comment %} <div class="row"> {% endcomment %}
+                                    <form id="filtrar_elementos" method="get">
+                                        <div class="row container-fluid " style="margin-top: 1.6rem; margin-bottom: 1.6rem;">
+                                            {% for field in filtro.form %}
+                                                <div class="col-2">
+                                                    <label class="form-label contenidoTbody" for="{{ field.id_for_label }}">{{ field.label_tag }}</label>
+                                                    <div class="input-group" id="search-input">
+                                                        {{ field }}
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </form>
+                                {% comment %} </div> {% endcomment %}
+                            {% comment %} </div> {% endcomment %}
+                            <div class="d-flex flex-row-reverse col-12">
+                                <button type="submit" class="btn btn-anam-primary m-1" role="button" form="filtrar_elementos">Filtrar</button>
+                                <a href="" type="button" class="btn-secondary btn m-1">Limpiar</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TABLE -->
+            <div class="container-fluid mt-10" style="background: white; border-radius:20px" id="filtro_bitacoras">
+                <div class="container-fluid d-flex flex-column p-4 pt-5 mt-3 containerFiltro"
+                    style="margin-bottom: 1.6rem;">
+                    <div class="container-fluid d-flex justify-content-between">
+                        <p class="fs-3 fw-semibold">Constancias</p>
+                        {% comment %} <div class="btn-group mb-2">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle btnOrdenarTablas border-0" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Ordenar tablas
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Ordenar de A a Z</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Ordenar de Z a A</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Del más antiguo al más nuevo</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Del más nuevo al más antiguo</a></li>
+
+                            </ul>
+                        </div> {% endcomment %}
+                    </div>
+
+                    <div class="tabla-contenedor">
+                        <table class="table table-striped" id="miTabla">
+                            <thead class="fw-bold text-white" style="background: #9f2241;text-transform:uppercase;vertical-align: middle">
+                                <tr class="tituloTr text-center">
+                                    {% comment %} {% for list in fp %}
+                                        <th class="px-10" style=" {% if forloop.counter == 1  %} border-radius: 20px 0px 0px 0px; {% else %} {% if forloop.last %} border-radius: 0px 20px 0px 0px; {% endif %} {% endif %}">
+                                            <div class="d-flex justify-content-center align-items-center text-center">
+                                                {{list.label}}
+                                            </div>
+                                        </th>
+                                    {% endfor %} {% endcomment %}
+                                    <th class="px-10" style="border-radius: 20px 0px 0px 0px;">
+                                        Numero de la constancia
+                                    </th>
+                                    <th class="px-10">
+                                        Fecha
+                                    </th>
+                                    <th class="px-10">
+                                        Estado
+                                    </th>
+                                    <th class="px-10">
+                                        Pago efectuado
+                                    </th>
+                                    <th class="px-10" style="border-radius: 0px 20px 0px 0px;">
+                                        Acciones
+                                    </th>
+                                </tr>
+                            </thead>
+    
+                            <tbody class="text-center align-middle">
+                                {% for objeto in model %}
+                                    <tr>
+                                        <td>{{objeto.numero_constancia}}</td>
+                                        <td>{{objeto.fecha}}</td>
+                                        <td>{{objeto.estado}}</td>
+                                        <td>
+                                            {% if objeto.pago %}
+                                                <i class="bi bi-check-circle" style="color: #10312b; font-size: 35px;"></i>
+                                            {% else %}
+                                                <i class="bi bi-x-circle" style="color: #9f2241; font-size: 35px;"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline accion-btn" data-bs-target="#pago_ac" data-bs-toggle="modal" data-numero="{{objeto.numero_constancia}}">
+                                                <i class="bi bi-wallet fs-2 d-flex justify-content-center align-items-center accion-icon"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    
+
+                    <br /><br />
+                    {% comment %} <!-- Controles de paginación -->
+                        <div class="pagination">
+                            <span class="step-links">
+                                {% if page_obj.has_previous %}
+                                    <a href="?{{ request.GET.urlencode }}&page=1">
+                                        <img src="{% static 'src/prev.svg'%}" style=" display: inline-block;vertical-align: middle;">
+                                    </a>
+                                    <a href="?{{ request.GET.urlencode }}&page={{ page_obj.previous_page_number }}">
+                                        <img src="{% static 'src/prevMini.svg'%}" style=" display: inline-block;vertical-align: middle; padding-left: 10px">
+                                        <span style="padding-right: 10px;"></span>
+                                    </a>
+                                {% endif %}
+
+                                <span class="page-indicator" style="border-radius: 8px; padding: 8px; background-color: #bc955c;">
+                                    <a href="#">
+                                        <span style="color: white;">
+                                            {{ page_obj.number }}
+                                        </span>
+                                    </a>
+                                </span>
+
+                                {% if page_obj.has_next %}
+                                    <a href="?{{ request.GET.urlencode }}&page={{ page_obj.next_page_number }}">
+                                        <span style="padding-left: 10px;"></span> 
+                                        <img src="{% static 'src/SiguienteMini.svg'%}" style=" display: inline-block;vertical-align: middle; padding-right: 10px">
+                                    </a>
+                                    <a href="?{{ request.GET.urlencode }}&page={{ page_obj.paginator.num_pages }}">
+                                        <img src="{% static 'src/Siguiente.svg'%}" style=" display: inline-block;vertical-align: middle;">
+                                    </a>
+                                {% endif %}
+                            </span>
+                        </div>
+                    <br /><br /> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal efectuar pago-->
+<div class="modal fade" tabindex="-1" role="dialog" id="pago_ac">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Verificar pagos</h5>
+            </div>
+            <div class="modal-body">
+                <p class="fs-3 text-center">
+                    ¿La siguiente constancia con el numero de control <span class="fw-bold" style="color: #10312b;">{numero control}</span> a fectuado el pago correspondiente?
+                </p>
+                <div class="d-flex justify-content-center">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <button name="respuesta" value="NO" class="btn btn-anam-danger mx-10" type="submit">NO</button>
+                        <input type="hidden" name="numero" id="numero_c">
+                    </form>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <button  name="respuesta" value="SI" class="btn btn-anam-primary mx-10" type="submit">SI</button>
+                        <input type="hidden" name="numero" id="numero_c">
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#pago_ac').on('show.bs.modal', function (event) {
+        // Botón que accionó el modal
+        var button = $(event.relatedTarget);
+        // Extraer el valor de los atributos data-*
+        var valorPasado = button.data('numero');
+
+        // Actualizar el contenido del modal
+        var modal = $(this);
+        modal.find('.modal-body #numero_c').val(valorPasado);
+        });
+    });
+</script>
+{% endblock js %}

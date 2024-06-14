@@ -1,0 +1,74 @@
+.deduccion-uso-bien {
+    height: 50px;
+}
+
+.botonesflex {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#custom-file-button {
+    background-color: #16634d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-submit, .btn-cancel {
+    background-color: #9f2241;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.btn-cancel {
+    background-color: #ccc;
+}
+
+.invisible-input {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
+    text-align: right;
+}
+
+.my-label {
+    margin-bottom: 0;
+}
+
+.no-telefono {
+    position: relative;
+    display: inline-block;
+}
+  
+.icono-informacion {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    color: #ccc;
+    cursor: pointer;
+}
+  
+.icono-informacion:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(65, 65, 65, 0.331);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 1000;
+}
