@@ -146,14 +146,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
-
-#EMAIL test
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025
-EMAIL_USE_TLS=False
-EMAIL_HOST_USER_EXTERNO="test1@outlook.com"
-EMAIL_HOST_PASSWORD_EXTERNO="password"
-EMAIL_HOST_USER_INTERNO="test2@outlook.com"
-EMAIL_HOST_PASSWORD_INTERNO="password"
-EMAIL_MESSAGE_SIZE_LIMIT = 104857600
